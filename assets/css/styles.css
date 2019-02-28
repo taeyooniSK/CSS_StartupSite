@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 html {
     font: normal 16px sans-serif;
@@ -31,6 +32,30 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 100px 80px;
+}
+
+section h3 {
+    color: #414a4f;
+    text-transform: capitalize;
+    font: bold 32px 'Open Sans', sans-serif;
+    margin-bottom: 35px;
+
+}
+
+section p {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 0 20px;
+    line-height: 2;
+}
+
+hr {
+    width: 150px;
+    height: 2px;
+    border: 0;
+    background-color: #2196F3;
+    margin-bottom: 80px;
 }
 
 /* Header Styles */
@@ -115,6 +140,7 @@ nav {
     font: bold 28px "Open Sans", sans-serif;
     /* font-size: 24px;
     font-weight: 300; */
+    color: inherit;
     margin-bottom: 30px;
 }
 .hero-content-area {
@@ -136,3 +162,29 @@ nav {
 }
 
 /* Our Work styles */
+
+section.our-work ul.grid {
+    min-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.our-work ul.grid li {
+    padding: 20px;
+    height: 350px;
+    background-size: cover;
+    background-clip: content-box;
+}
+
+ul.grid li.small {
+    flex-basis: 40%;
+
+}
+
+ul.grid li.large {
+    flex-basis: 60%;
+}
+
+/* Features and Services styles */
+
