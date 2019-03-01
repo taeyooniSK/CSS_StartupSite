@@ -20,7 +20,6 @@ a:hover {
 
 a.btn {
     text-transform: uppercase;
-    padding: 20px 70px;
     border-radius: 4px;
     background-color: #3f51b5;
     font-weight: bold;
@@ -38,17 +37,16 @@ section:not(.hero):nth-child(even){
     background-color: #f5f5f5;
 }
 
-section h3 {
-    color: #414a4f;
+section h3.title {
     text-transform: capitalize;
     font: bold 32px 'Open Sans', sans-serif;
     margin-bottom: 35px;
+    text-align: center;
 
 }
 
 section p {
     max-width: 775px;
-    text-align: center;
     margin-bottom: 30px;
     padding: 0 20px;
     line-height: 2;
@@ -64,18 +62,25 @@ hr {
 }
 
 .grid {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@media (max-width: 800px){
+    section {
+        padding: 50px 20px;
+    }
 }
 
 /* Header Styles */
 
 header {
     position: absolute;
-    top: 0;
+    /* top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 10; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -83,6 +88,7 @@ header {
     align-items: center;
     animation: 1s fadein 0.5s forwards;
     opacity: 0;
+    color: #fff;
 }
 
 @keyframes fadein {
@@ -108,6 +114,16 @@ nav {
     display: flex;
     margin-right: -15px;
 }
+@media (max-width: 800px) {
+    header {
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+
+    header h2 {
+        margin-bottom: 15px;
+    }
+}
 
 /* Hero Section */
 
@@ -126,9 +142,10 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/background-image.jpg");
+    /* background-image: url("../img/background-image.jpg"); */
     z-index: -1;
     background-size: cover;
+    background-color: #80a3db;
 }
 
 .hero .background-image:after{
@@ -141,19 +158,22 @@ nav {
     background-size: cover;
     background-color: #414a4f;
     opacity: 0.75;
-}
+} 
+
 .hero h1 {
-    font: bold 50px "Open Sans", sans-serif;
+    font: bold 60px "Open Sans", sans-serif;
     /* font-size: 50px; */
     margin-bottom: 15px;
 }
 .hero h3 {
-    font: bold 28px "Open Sans", sans-serif;
-    /* font-size: 24px;
-    font-weight: 300; */
+    font: normal 28px "Open Sans", sans-serif;
     color: inherit;
     margin-bottom: 30px;
 }
+.hero a.btn {
+    padding: 20px 70px;
+}
+
 .hero-content-area {
     opacity: 0;
     /* margin-top: 100px; 마진으로 해도 되고 트랜스폼으로 해도됨 */ 
@@ -172,14 +192,32 @@ nav {
     }
 }
 
+@media (max-width: 800px) {
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h3 {
+        font-size: 24px;
+    }
+
+    .hero a.btn {
+        padding: 15px 40px;
+    }
+}
+
 /* Destinations Section */
 
-.destinations .grid {
+/* .destinations .grid {
     min-width: 800px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+} */
 
 .destinations .grid li {
     padding: 20px;
@@ -198,12 +236,26 @@ nav {
     flex-basis: 70%;
 }
 
-/* packages Section */
+@media  (max-width: 1100px ){
+    .destinations .grid li.small,
+    .destinations .grid li.large {
+        flex-basis:50%
+    }
+}
+
+@media  (max-width: 800px ){
+    .destinations .grid li.small,
+    .destinations .grid li.large {
+        flex-basis:100%
+    }
+}
+
+/* Packages Section */
 
 .packages .grid li {
+    padding: 50px;
     text-align: center;
     flex-basis: 50%;
-    padding: 0 20px;
 }
 
 .packages .grid i.fa {
@@ -214,6 +266,13 @@ h4 {
     margin: 25px 0;
 }
 
+@media (max-width: 800px){
+    .packages .grid li {
+        flex-basis: 100%;
+        padding: 20px;
+    }
+}
+
 /* Testimonials Section */
 
 .testimonials .quote {
@@ -222,6 +281,16 @@ h4 {
     line-height: 1.5;
     margin: 40px 0 25px;
 
+}
+
+@media (max-width: 800px){
+    .testimonials .quote {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+    .testimonials .author {
+        font-size: 14px;
+    }
 }
 
 /* Contact Section */
@@ -244,7 +313,14 @@ h4 {
     color: #555;
     flex: 1;
 }
- 
+
+@media (max-width: 1000px){
+    .contact form input {
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+
 /* Footer */
 
 footer {
@@ -269,4 +345,19 @@ footer p {
     font-size: 14px;
     opacity: 0.6;
     align-self: center;
+}
+
+@media (max-width: 1100px){
+    footer {
+        flex-direction: column;
+    }
+
+    footer p {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    footer ul li {
+        margin: 0 8px;
+    }
 }
